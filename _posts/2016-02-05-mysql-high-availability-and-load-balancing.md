@@ -41,7 +41,7 @@ Modifications to the current server:
 2.	Dump the MySQL file from the running database,
 `$ mysqldump –u<youruser> -p mydatabase > database_dump.sql`
 3.	In the CURRENT running MySQL Server, backup a copy of mysql.cnf
-$ `sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig`
+`$ sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig`
 4.	In the CURRENT running MySQL server, change the configuration /etc/mysql/my.cnf, add some options under [mysqld]
 ```
 bind-address  = 0.0.0.0
