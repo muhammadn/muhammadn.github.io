@@ -82,7 +82,7 @@ server-id = 2 # id is different than the CURRENT MySQL server
 ```
 11.	Restart the MySQL on the New server.
 
-12.	Go to the new MySQL server’s  (192.168.1.11) console, we will sync this new MySQL server with the current one (IMPORTANT! YOU NEED TO SET THE MASTER_LOG_FILE and MASTER_LOG_POS ACCORDING TO THE CURRENT RUNNING SERVER’S File and Position VALUES OR IT WILL NOT BE IN SYNC):
+12.	Go to the new MySQL server’s  (192.168.1.11) console, we will sync this new MySQL server with the current one (**IMPORTANT! YOU NEED TO SET THE MASTER_LOG_FILE and MASTER_LOG_POS ACCORDING TO THE CURRENT RUNNING SERVER’S File and Position VALUES OR IT WILL NOT BE IN SYNC)**:
 ```
 mysql> SLAVE STOP;
 mysql> CHANGE MASTER TO MASTER_HOST='192.168.1.10', MASTER_USER='replication', MASTER_PASSWORD='your_replication_password', MASTER_LOG_FILE=’<the File value from running server>', MASTER_LOG_POS=<the Position value from the running server>;
@@ -103,7 +103,7 @@ mysql> SHOW SLAVE STATUS\G;
 17.	Take note of the File and Position of the above command in the NEW MySQL Server.
 
 
-18.	On the CURRENT Running MySQL Server (192.168.1.10), we will Sync up with the NEW MySQL Server one (**IMPORTANT! YOU NEED TO SET THE MASTER_LOG_FILE and MASTER_LOG_POS ACCORDING TO THE NEW SERVER’S __**File**__ and __**Position**__ VALUES OR IT WILL NOT BE IN SYNC):
+18.	On the CURRENT Running MySQL Server (192.168.1.10), we will Sync up with the NEW MySQL Server one (**IMPORTANT! YOU NEED TO SET THE MASTER_LOG_FILE and MASTER_LOG_POS ACCORDING TO THE NEW SERVER’S __File__ and __Position__ VALUES OR IT WILL NOT BE IN SYNC)**
 ```
 mysql> SLAVE STOP;
 mysql> CHANGE MASTER TO MASTER_HOST='192.168.1.11', MASTER_USER='replication', MASTER_PASSWORD='your_replication_password', MASTER_LOG_FILE=’<the File value from NEW server>', MASTER_LOG_POS=<the Position value from the NEW server>;
