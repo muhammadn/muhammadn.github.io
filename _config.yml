@@ -1,5 +1,13 @@
-title: Cayman theme
-description: Cayman is a clean, responsive theme for GitHub Pages.
-show_downloads: true
-google_analytics:
-theme: 
+# Setup
+title:        Zaihan's blog
+description: Blogging on Infrastructure and Software Development
+baseurl:      ""
+paginate:     1
+
+# About/contact
+author:
+  name:       Muhammad Nuzaihan Kamal Luddin
+  url:        http://unrealasia.net
+
+#Others
+markdown: kramdown
