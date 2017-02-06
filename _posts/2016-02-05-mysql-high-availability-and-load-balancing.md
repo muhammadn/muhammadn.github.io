@@ -23,7 +23,7 @@ KeepaliveD keeps a floating IP (also called a Virtual IP) which the Web applicat
 
 Assuming we have two KeepaliveD router where one is MASTER and one is BACKUP sharing this Virtual IP where if one KeepaliveD router fails (eg. MASTER), the other KeepaliveD instance (eg. BACKUP) will take over the Virtual IP where the Web application is connecting to.
 
-**NOTE:** In this document there are two types of Master, MySQL Master and LVS MASTER.
+**NOTE:** In this post there are two types of Master, MySQL Master and LVS MASTER.
 
 ## Diagram 
 ![High-Availability Diagram]({{ site.url }}/assets/images/mysql-high-availability-and-load-balancing.png){:class="img-responsive"}
