@@ -31,27 +31,29 @@ Assuming we have two KeepaliveD router where one is MASTER and one is BACKUP sha
 # Configuration Steps
 ## MySQL Server Setup
 Let’s assume the MySQL server IP is as follows:
+```
 Current running MySQL Server: 192.168.1.10
 New MySQL Server: 192.168.1.11
+```
 
 Modifications to the current server:
 1.	Stop all database activity by shutting down the Web application
 2.	Dump the MySQL file from the running database,
-#> mysqldump –u<youruser> -p mydatabase > database_dump.sql
+`$ mysqldump –u<youruser> -p mydatabase > database_dump.sql`
 3.	In the CURRENT running MySQL Server, backup a copy of mysql.cnf
-$ sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig
+$ `sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig`
 4.	In the CURRENT running MySQL server, change the configuration /etc/mysql/my.cnf, add some options under [mysqld]
-
+```
 bind-address  = 0.0.0.0
 log-bin = /var/log/mysql/mysql-bin.log
 binlog-db-db=mydatabase # this is the database we will replicate
 binlog-ignore-db=mysql
 binlog-ignore-db=test
 server-id = 1
-
+```
 5.	Restart the MySQL Server
-6.	Go to mysql console, type in ‘SHOW MASTER STATUS;’
-IMPORTANT! Take note of File and Positon.
+6.	Go to mysql console, type in ‘`SHOW MASTER STATUS;`’
+**IMPORTANT!** Take note of **File** and **Positon.**
 Example output:
 ```
 mysql> show master status;
@@ -125,11 +127,13 @@ mysql> FLUSH ALL PRIVILEGES;
 We will need two servers (each can be low spec server with 2 Cores and at least 2GB RAM) which will be used for network high-availability and load balancing.
 
 Assuming the IP address are as follows:
+```
 MASTER LVS: 192.168.1.20
 BACKUP LVS: 192.168.1.21
 CURRENT MYSQL SERVER: 192.168.1.10
 NEW MYSQL SERVER: 192.168.1.11
 Virtual (Floating IP) – **No need to be configured on any server’s interfaces, will be managed by keepalived**: 192.168.1.30
+```
 
 Change the IP in the configuration according to your infrastructure setup!
 
