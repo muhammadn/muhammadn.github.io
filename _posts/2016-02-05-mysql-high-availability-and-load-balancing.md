@@ -145,7 +145,7 @@ Example output:
 Example:
 
 
-        mysql> GRANT ALL PRIVILEGS ON mydatabase.* to ‘<the db user>’@’<the web app server IP>’ IDENTIFIED BY ‘<the password for the db user>’;
+        mysql> GRANT ALL PRIVILEGES ON mydatabase.* to ‘<the db user>’@’<the web app server IP>’ IDENTIFIED BY ‘<the password for the db user>’;
         mysql> FLUSH ALL PRIVILEGES;  
 
 
