@@ -29,6 +29,7 @@ Assuming we have two KeepaliveD router where one is MASTER and one is BACKUP sha
 ![High-Availability Diagram]({{ site.url }}/assets/images/mysql-high-availability-and-load-balancing.png){:class="img-responsive"}
 
 # Configuration Steps
+
 ## MySQL Server Setup
 Let’s assume the MySQL server IP is as follows:
 
