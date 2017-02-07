@@ -52,14 +52,12 @@ Modifications to the current server:
 4.	In the CURRENT running MySQL server, change the configuration /etc/mysql/my.cnf, add some options under [mysqld]
 
 
-```
-bind-address  = 0.0.0.0
-log-bin = /var/log/mysql/mysql-bin.log
-binlog-db-db=mydatabase # this is the database we will replicate
-binlog-ignore-db=mysql
-binlog-ignore-db=test
-server-id = 1
-```
+        bind-address  = 0.0.0.0
+        log-bin = /var/log/mysql/mysql-bin.log
+        binlog-db-db=mydatabase # this is the database we will replicate
+        binlog-ignore-db=mysql
+        binlog-ignore-db=test
+        server-id = 1
 
 
 5.	Restart the MySQL Server
