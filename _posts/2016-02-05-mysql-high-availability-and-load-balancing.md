@@ -43,6 +43,7 @@ New MySQL Server: 192.168.1.11
 
 Modifications to the current server:
 
+
 1.	Stop all database activity by shutting down the Web application
 2.	Dump the MySQL file from the running database,
         `$ mysqldump –u<youruser> -p mydatabase > database_dump.sql`
@@ -78,7 +79,12 @@ mysql> show master status;
 
 
 7.	Then in the MySQL console, add a new grant for replication.
-        `mysql> grant replication slave on *.* to 'replication'@'%' identified by ‘your_replication_password';`
+
+
+        ```
+        mysql> grant replication slave on *.* to 'replication'@'%' identified by ‘your_replication_password';
+        ```
+
 
 8.	In the NEW MySQL server, import the MySQL dump we got from the running MySQL Server
         `$ mysql –u<youruser> -p<yourpassword> mydatabase < database_dump.sql
