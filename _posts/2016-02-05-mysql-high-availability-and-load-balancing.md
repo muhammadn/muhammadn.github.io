@@ -3,12 +3,12 @@ layout: default
 title:  "MySQL High-Availability and Load Balancing"
 date:   2016-02-06 21:55:00 +0800
 ---
-# Introduction
+## Introduction
 In cases where the failure of the database is not acceptable, there are ways to protect the data from database failures, especially for Single-point of failure in a scenario is where there is only one database server running. 
 
 MySQL has a lot of options on having a failover and load balancing setup from MySQL cluster, MySQL master-slave setup with MySQL router or even using a lower level load balance with Linux Virtual Server (which is a Load balancer and Fail-Over router using VRRP protocol) and MySQL master-master setup.
 
-# Choosing a Setup
+## Choosing a Setup
 MySQL Cluster is intended for large MySQL installations (ie. a server farm with 10-20 MySQL servers) which is too redundant for our installation and MySQL Master-Slave setup can only have one write (usually Master only) and one read (Slaves only).
 
 Our choice is to use Master-Master MySQL and Linux Virtual Server (LVS/KeepaliveD) design is to allow writes to any  Master (eg. 2 Master MySQL server).
@@ -25,12 +25,12 @@ Assuming we have two KeepaliveD router where one is MASTER and one is BACKUP sha
 
 **NOTE:** In this post there are two types of Master, MySQL Master and LVS MASTER.
 
-## Diagram 
+### Diagram 
 ![High-Availability Diagram]({{ site.url }}/assets/images/mysql-high-availability-and-load-balancing.png){:class="img-responsive"}
 
-# Configuration Steps
+### Configuration Steps
 
-## MySQL Server Setup
+#### MySQL Server Setup
 
 Let’s assume the MySQL server IP is as follows:
 
@@ -149,7 +149,7 @@ Example:
         mysql> FLUSH ALL PRIVILEGES;  
 
 
-# LVS (KeepaliveD)
+### LVS (KeepaliveD)
 We will need two servers (each can be low spec server with 2 Cores and at least 2GB RAM) which will be used for network high-availability and load balancing.
 
 Assuming the IP address are as follows:
