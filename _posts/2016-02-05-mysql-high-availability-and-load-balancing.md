@@ -31,6 +31,7 @@ Assuming we have two KeepaliveD router where one is MASTER and one is BACKUP sha
 # Configuration Steps
 
 ## MySQL Server Setup
+
 Let’s assume the MySQL server IP is as follows:
 
 
@@ -41,11 +42,12 @@ New MySQL Server: 192.168.1.11
 
 
 Modifications to the current server:
+
 1.	Stop all database activity by shutting down the Web application
 2.	Dump the MySQL file from the running database,
-`$ mysqldump –u<youruser> -p mydatabase > database_dump.sql`
+        `$ mysqldump –u<youruser> -p mydatabase > database_dump.sql`
 3.	In the CURRENT running MySQL Server, backup a copy of mysql.cnf
-`$ sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig`
+        `$ sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig`
 4.	In the CURRENT running MySQL server, change the configuration /etc/mysql/my.cnf, add some options under [mysqld]
 
 
@@ -76,12 +78,12 @@ mysql> show master status;
 
 
 7.	Then in the MySQL console, add a new grant for replication.
-`mysql> grant replication slave on *.* to 'replication'@'%' identified by ‘your_replication_password';`
+        `mysql> grant replication slave on *.* to 'replication'@'%' identified by ‘your_replication_password';`
 
 8.	In the NEW MySQL server, import the MySQL dump we got from the running MySQL Server
-`$ mysql –u<youruser> -p<yourpassword> mydatabase < database_dump.sql
+        `$ mysql –u<youruser> -p<yourpassword> mydatabase < database_dump.sql
 9.	In the NEW MySQL Server, backup a copy of my.cnf
-`$ sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig`
+        `$ sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig`
 10.	Edit /etc/mysql/mysql.cnf in the new MySQL Server with the following under [mysqld] and save the file. 
 
 
