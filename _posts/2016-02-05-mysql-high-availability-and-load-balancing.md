@@ -143,7 +143,7 @@ In both MASTER and BACKUP LVS server, download and install keepalived and ipvsad
 **Add this configuration to MASTER LVS (192.168.1.20) in /etc/keepalived/keepalived.conf:**
 ```
 global_defs {
-    router_id LVS_ERATING
+    router_id LVS_MYPROJECT
 }
 vrrp_instance VI_1 {
     state MASTER
@@ -204,7 +204,7 @@ virtual_server 192.168.1.30 3306 {
 **Add this configuration to BACKUP LVS (192.168.1.21) in /etc/keepalived/keepalived.conf:**
 ```
 global_defs {
-    router_id LVS_ERATING
+    router_id LVS_MYPROJECT
 }
 vrrp_instance VI_1 {
     state BACKUP
