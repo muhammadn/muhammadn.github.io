@@ -31,6 +31,7 @@ Assuming we have two KeepaliveD router where one is MASTER and one is BACKUP sha
 # Configuration Steps
 ## MySQL Server Setup
 Let’s assume the MySQL server IP is as follows:
+
 ```
 Current running MySQL Server: 192.168.1.10
 New MySQL Server: 192.168.1.11
@@ -43,6 +44,7 @@ Modifications to the current server:
 3.	In the CURRENT running MySQL Server, backup a copy of mysql.cnf
 `$ sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig`
 4.	In the CURRENT running MySQL server, change the configuration /etc/mysql/my.cnf, add some options under [mysqld]
+
 ```
 bind-address  = 0.0.0.0
 log-bin = /var/log/mysql/mysql-bin.log
@@ -51,10 +53,12 @@ binlog-ignore-db=mysql
 binlog-ignore-db=test
 server-id = 1
 ```
+
 5.	Restart the MySQL Server
 6.	Go to mysql console, type in ‘`SHOW MASTER STATUS;`’
 **IMPORTANT!** Take note of **File** and **Positon.**
 Example output:
+
 ```
 mysql> show master status;
 +------------------+----------+--------------+------------------+
@@ -72,6 +76,7 @@ mysql> show master status;
 9.	In the NEW MySQL Server, backup a copy of my.cnf
 `$ sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig`
 10.	Edit /etc/mysql/mysql.cnf in the new MySQL Server with the following under [mysqld] and save the file. 
+
 ```
 bind-address  = 0.0.0.0
 log-bin = /var/log/mysql/mysql-bin.log
@@ -83,19 +88,23 @@ server-id = 2 # id is different than the CURRENT MySQL server
 11.	Restart the MySQL on the New server.
 
 12.	Go to the new MySQL server’s  (192.168.1.11) console, we will sync this new MySQL server with the current one (**IMPORTANT! YOU NEED TO SET THE MASTER_LOG_FILE and MASTER_LOG_POS ACCORDING TO THE CURRENT RUNNING SERVER’S File and Position VALUES OR IT WILL NOT BE IN SYNC)**:
+
 ```
 mysql> SLAVE STOP;
 mysql> CHANGE MASTER TO MASTER_HOST='192.168.1.10', MASTER_USER='replication', MASTER_PASSWORD='your_replication_password', MASTER_LOG_FILE=’<the File value from running server>', MASTER_LOG_POS=<the Position value from the running server>;
 mysql> SLAVE START;
 ```
+
 13.	Check the Status on the New MySQL server:
 mysql> SHOW SLAVE STATUS\G;
 14.	Make sure these two values set to ‘YES’ with waiting master to send event and NO ERRORS:
+
 ```
             Slave_IO_State: Waiting for master to send event
             Slave_IO_Running: Yes
             Slave_SQL_Running: Yes
 ```
+
 15.	On the NEW MySQL server, run the following command:
 `mysql> grant replication slave on *.* to 'replication'@'%' identified by ‘your_replication_password';`
 16.	Then on the NEW MySQL Server’s Console, type in:
@@ -111,13 +120,16 @@ mysql> CHANGE MASTER TO MASTER_HOST='192.168.1.11', MASTER_USER='replication', M
 19.	Check the Status of the CURRENT Running Server
 `mysql> SHOW SLAVE STATUS\G;`
 20.	Make sure these two values set to ‘YES’ and waiting for master to send event and NO Errors:
+
 ```
             Slave_IO_State: Waiting for master to send event
              Slave_IO_Running: Yes
             Slave_SQL_Running: Yes
 ```
+
 21.	GRANT privileges for normal database access for the Web App on the NEW server:
 Example:
+
 ```
 mysql> GRANT ALL PRIVILEGS ON mydatabase.* to ‘<the db user>’@’<the web app server IP>’ IDENTIFIED BY ‘<the password for the db user>’;
 mysql> FLUSH ALL PRIVILEGES;  
@@ -127,6 +139,7 @@ mysql> FLUSH ALL PRIVILEGES;
 We will need two servers (each can be low spec server with 2 Cores and at least 2GB RAM) which will be used for network high-availability and load balancing.
 
 Assuming the IP address are as follows:
+
 ```
 MASTER LVS: 192.168.1.20
 BACKUP LVS: 192.168.1.21
