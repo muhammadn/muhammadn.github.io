@@ -304,7 +304,8 @@ Lastly, start the KeepaliveD services on both MASTER LVS and BACKUP LVS:
 In this final setup, we will configure the Web app to use KeepaliveD’s Virtual IP (192.168.1.30) and create some firewall rules on both the **MySQL DATABASE SERVER, NOT LVS SERVER**.
 
 1.	`$ sudo iptables -t nat -A PREROUTING -d 192.168.1.30 -j REDIRECT`
-2.	edit /etc/rc.local on the MySQL Database servers to make the firewall rule persistent - 
+2.	edit /etc/rc.local on the MySQL Database servers to make the firewall rule persistent 
+        
         Example:
 
 
@@ -320,7 +321,7 @@ In this final setup, we will configure the Web app to use KeepaliveD’s Virtual
         # bits.
         #
         # By default this script does nothing.
-        **/sbin/iptables -t nat -A PREROUTING -d 192.168.1.30 -j REDIRECT**
+        /sbin/iptables -t nat -A PREROUTING -d 192.168.1.30 -j REDIRECT
         exit 0
 
 
