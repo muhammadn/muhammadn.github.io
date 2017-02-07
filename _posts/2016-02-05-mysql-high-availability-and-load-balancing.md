@@ -305,25 +305,23 @@ In this final setup, we will configure the Web app to use KeepaliveD’s Virtual
 
 1.	`$ sudo iptables -t nat -A PREROUTING -d 192.168.1.30 -j REDIRECT`
 2.	edit /etc/rc.local on the MySQL Database servers to make the firewall rule persistent - 
-Example:
+        Example:
 
 
-```
-#!/bin/sh -e
-#
-# rc.local
-#
-# This script is executed at the end of each multiuser runlevel.
-# Make sure that the script will "exit 0" on success or any other
-# value on error.
-#
-# In order to enable or disable this script just change the execution
-# bits.
-#
-# By default this script does nothing.
-/sbin/iptables -t nat -A PREROUTING -d 192.168.1.30 -j REDIRECT
-exit 0
-```
+        #!/bin/sh -e
+        #
+        # rc.local
+        #
+        # This script is executed at the end of each multiuser runlevel.
+        # Make sure that the script will "exit 0" on success or any other
+        # value on error.
+        #
+        # In order to enable or disable this script just change the execution
+        # bits.
+        #
+        # By default this script does nothing.
+        **/sbin/iptables -t nat -A PREROUTING -d 192.168.1.30 -j REDIRECT**
+        exit 0
 
 
 3.	`$ chmod 755 /etc/rc.local`
