@@ -124,7 +124,7 @@ Example output:
 17.	Take note of the File and Position of the above command in the NEW MySQL Server.
 
 
-18.	On the CURRENT Running MySQL Server (192.168.1.10), we will Sync up with the NEW MySQL Server one (**IMPORTANT! YOU NEED TO SET THE MASTER_LOG_FILE and MASTER_LOG_POS ACCORDING TO THE NEW SERVER’S __File__ and __Position__ VALUES OR IT WILL NOT BE IN SYNC)**
+18.	On the **CURRENT Running MySQL Server (192.168.1.10)**, we will Sync up with the NEW MySQL Server one (**IMPORTANT! YOU NEED TO SET THE MASTER_LOG_FILE and MASTER_LOG_POS ACCORDING TO THE NEW SERVER’S __File__ and __Position__ VALUES OR IT WILL NOT BE IN SYNC)**
 
 
         mysql> SLAVE STOP;
