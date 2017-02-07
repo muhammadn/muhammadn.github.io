@@ -32,10 +32,12 @@ Assuming we have two KeepaliveD router where one is MASTER and one is BACKUP sha
 ## MySQL Server Setup
 Let’s assume the MySQL server IP is as follows:
 
+
 ```
 Current running MySQL Server: 192.168.1.10
 New MySQL Server: 192.168.1.11
 ```
+
 
 Modifications to the current server:
 1.	Stop all database activity by shutting down the Web application
@@ -44,6 +46,7 @@ Modifications to the current server:
 3.	In the CURRENT running MySQL Server, backup a copy of mysql.cnf
 `$ sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig`
 4.	In the CURRENT running MySQL server, change the configuration /etc/mysql/my.cnf, add some options under [mysqld]
+
 
 ```
 bind-address  = 0.0.0.0
@@ -54,10 +57,12 @@ binlog-ignore-db=test
 server-id = 1
 ```
 
+
 5.	Restart the MySQL Server
 6.	Go to mysql console, type in ‘`SHOW MASTER STATUS;`’
 **IMPORTANT!** Take note of **File** and **Positon.**
 Example output:
+
 
 ```
 mysql> show master status;
@@ -68,6 +73,7 @@ mysql> show master status;
 +------------------+----------+--------------+------------------+
 ```
 
+
 7.	Then in the MySQL console, add a new grant for replication.
 `mysql> grant replication slave on *.* to 'replication'@'%' identified by ‘your_replication_password';`
 
@@ -77,6 +83,7 @@ mysql> show master status;
 `$ sudo cp /etc/mysql/my.cnf /etc/mysql/my.cnf.orig`
 10.	Edit /etc/mysql/mysql.cnf in the new MySQL Server with the following under [mysqld] and save the file. 
 
+
 ```
 bind-address  = 0.0.0.0
 log-bin = /var/log/mysql/mysql-bin.log
@@ -85,9 +92,12 @@ binlog-ignore-db=mysql
 binlog-ignore-db=test
 server-id = 2 # id is different than the CURRENT MySQL server
 ```
+
+
 11.	Restart the MySQL on the New server.
 
 12.	Go to the new MySQL server’s  (192.168.1.11) console, we will sync this new MySQL server with the current one (**IMPORTANT! YOU NEED TO SET THE MASTER_LOG_FILE and MASTER_LOG_POS ACCORDING TO THE CURRENT RUNNING SERVER’S File and Position VALUES OR IT WILL NOT BE IN SYNC)**:
+
 
 ```
 mysql> SLAVE STOP;
@@ -95,15 +105,18 @@ mysql> CHANGE MASTER TO MASTER_HOST='192.168.1.10', MASTER_USER='replication', M
 mysql> SLAVE START;
 ```
 
+
 13.	Check the Status on the New MySQL server:
 mysql> SHOW SLAVE STATUS\G;
 14.	Make sure these two values set to ‘YES’ with waiting master to send event and NO ERRORS:
+
 
 ```
             Slave_IO_State: Waiting for master to send event
             Slave_IO_Running: Yes
             Slave_SQL_Running: Yes
 ```
+
 
 15.	On the NEW MySQL server, run the following command:
 `mysql> grant replication slave on *.* to 'replication'@'%' identified by ‘your_replication_password';`
@@ -113,13 +126,18 @@ mysql> SHOW SLAVE STATUS\G;
 
 
 18.	On the CURRENT Running MySQL Server (192.168.1.10), we will Sync up with the NEW MySQL Server one (**IMPORTANT! YOU NEED TO SET THE MASTER_LOG_FILE and MASTER_LOG_POS ACCORDING TO THE NEW SERVER’S __File__ and __Position__ VALUES OR IT WILL NOT BE IN SYNC)**
+
+
 ```
 mysql> SLAVE STOP;
 mysql> CHANGE MASTER TO MASTER_HOST='192.168.1.11', MASTER_USER='replication', MASTER_PASSWORD='your_replication_password', MASTER_LOG_FILE=’<the File value from NEW server>', MASTER_LOG_POS=<the Position value from the NEW server>;
 ```
+
+
 19.	Check the Status of the CURRENT Running Server
 `mysql> SHOW SLAVE STATUS\G;`
 20.	Make sure these two values set to ‘YES’ and waiting for master to send event and NO Errors:
+
 
 ```
             Slave_IO_State: Waiting for master to send event
@@ -127,18 +145,22 @@ mysql> CHANGE MASTER TO MASTER_HOST='192.168.1.11', MASTER_USER='replication', M
             Slave_SQL_Running: Yes
 ```
 
+
 21.	GRANT privileges for normal database access for the Web App on the NEW server:
 Example:
+
 
 ```
 mysql> GRANT ALL PRIVILEGS ON mydatabase.* to ‘<the db user>’@’<the web app server IP>’ IDENTIFIED BY ‘<the password for the db user>’;
 mysql> FLUSH ALL PRIVILEGES;  
 ```
 
+
 # LVS (KeepaliveD)
 We will need two servers (each can be low spec server with 2 Cores and at least 2GB RAM) which will be used for network high-availability and load balancing.
 
 Assuming the IP address are as follows:
+
 
 ```
 MASTER LVS: 192.168.1.20
@@ -148,12 +170,14 @@ NEW MYSQL SERVER: 192.168.1.11
 Virtual (Floating IP) – **No need to be configured on any server’s interfaces, will be managed by keepalived**: 192.168.1.30
 ```
 
+
 Change the IP in the configuration according to your infrastructure setup!
 
 In both MASTER and BACKUP LVS server, download and install keepalived and ipvsadm
 `$ sudo apt-get install keepalived ipvsadm`
 
 **Add this configuration to MASTER LVS (192.168.1.20) in /etc/keepalived/keepalived.conf:**
+
 
 ```
 global_defs {
@@ -215,7 +239,9 @@ virtual_server 192.168.1.30 3306 {
 }
 ```
 
+
 **Add this configuration to BACKUP LVS (192.168.1.21) in /etc/keepalived/keepalived.conf:**
+
 
 ```
 global_defs {
@@ -276,6 +302,7 @@ virtual_server 192.168.1.30 3306 {
 }
 ```
 
+
 Lastly, start the KeepaliveD services on both MASTER LVS and BACKUP LVS:
 `$ sudo service start keepalived`
 
@@ -286,6 +313,8 @@ In this final setup, we will configure the Web app to use KeepaliveD’s Virtual
 1.	`$ sudo iptables -t nat -A PREROUTING -d 192.168.1.30 -j REDIRECT`
 2.	edit /etc/rc.local on the MySQL Database servers to make the firewall rule persistent - 
 Example:
+
+
 ```
 #!/bin/sh -e
 #
@@ -302,6 +331,8 @@ Example:
 /sbin/iptables -t nat -A PREROUTING -d 192.168.1.30 -j REDIRECT
 exit 0
 ```
+
+
 3.	`$ chmod 755 /etc/rc.local`
 4.	Edit the .env file to use the Virtual IP (Example in our setup: 192.168.1.30)
 5.	Start the Web Application
