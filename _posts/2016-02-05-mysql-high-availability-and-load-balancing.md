@@ -68,21 +68,17 @@ server-id = 1
 Example output:
 
 
-        ```
         mysql> show master status;
         +------------------+----------+--------------+------------------+
         | File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |
         +------------------+----------+--------------+------------------+
         | mysql-bin.000010 |     1193 | mydatabase   |   mysql,test     |
         +------------------+----------+--------------+------------------+
-        ```
 
 
 7.	Then in the MySQL console, add a new grant for replication.
 
-        ```
         mysql> grant replication slave on *.* to 'replication'@'%' identified by ‘your_replication_password';
-        ```
 
 8.	In the NEW MySQL server, import the MySQL dump we got from the running MySQL Server
         `$ mysql –u<youruser> -p<yourpassword> mydatabase < database_dump.sql
