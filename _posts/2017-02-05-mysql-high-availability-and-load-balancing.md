@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "MySQL High-Availability and Load Balancing"
-date:   2016-02-06 21:55:00 +0800
+date:   2017-02-06 21:55:00 +0800
 ---
 ## Introduction
 In cases where the failure of the database is not acceptable, there are ways to protect the data from database failures, especially for Single-point of failure in a scenario is where there is only one database server running. 

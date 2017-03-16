@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Polyglot programming and the benefits"
-date:   2016-03-16 15:22:00 +0800
+date:   2017-03-16 15:22:00 +0800
 ---
 Polyglot programming is the understanding and knowledge of a wide range and paradigms of programming.
 

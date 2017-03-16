@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Parsing cookies stored in JSON"
-date:   2016-02-02 20:22:00 +0800
+date:   2017-02-02 20:22:00 +0800
 ---
 
 Sometimes, you will have to store cookie data and you would store it in JSON with `JSON.stringify`. 
