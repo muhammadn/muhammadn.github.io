@@ -23,4 +23,6 @@ I had been dabbling with Haskell for a while but while i liked a language that i
 
 After 15 years as a systems engineer with not much software development knowledge but now, it makes me more flexible in taking development roles and at the same time, enhance the infrastructure with network engineering on most parts like clustering and failover.
 
-Sometimes you have to be more pragmatic by allowing a whole lot of options when developing software. Using and understanding one computer language throughout your life is not going to benefit you or anyone around you and you will be sticked to the narrow path not knowing that you can write the same code in the language you can only work on with less time and even lines of code!
+Sometimes you have to be more pragmatic by allowing a whole lot of options when developing software. 
+
+Using and understanding one computer language throughout your life is not going to benefit you or anyone around you and you will be sticked to the narrow path not knowing that you can write the same code in the language you can only work on with less time and even lines of code!
