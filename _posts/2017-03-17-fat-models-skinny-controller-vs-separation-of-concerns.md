@@ -35,7 +35,7 @@ end
 ```
 Bad innit? Code in the controller?
 
-After re-factoring, i have the business logic code in a concern rather than the controller like below:
+After re-factoring, i have the business logic code in a concern (ie. `controller/concerns/jobs_query.rb`) rather than the controller like below:
 ```
 module JobsQuery
   extend ActiveSupport::Concern
