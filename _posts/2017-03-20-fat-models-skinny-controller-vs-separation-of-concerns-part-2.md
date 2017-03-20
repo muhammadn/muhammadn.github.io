@@ -34,6 +34,9 @@ So you would access this method (usually in the controller) by `User.from_omniau
 
 To move this code to the concern you will have to add a new file, in this example in `models/concerns/omniauth.rb`.
 
+You will need `module Omniauth` with `extend ActiveSupport::Concern` to extend the model, and you will need to add the business logic
+code in `module ClassMethods` and *removing* `self.`.
+
 ```
 module Omniauth
   extend ActiveSupport::Concern
@@ -53,7 +56,7 @@ module Omniauth
                            )
        return user
      end
-  end
+    end
   end
 end
 
