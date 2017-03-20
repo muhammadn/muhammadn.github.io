@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Fat Models, Skinny Controller vs Separation of concerns"
+title:  "Fat Models, Skinny Controller vs Separation of concerns, Part 1"
 date:   2017-03-17 02:01:00 +0800
 ---
 I started with Rails 3.2.13 and during this days, the rails community had recommended making the Rails Controller skinny (with only request code) and making the model fat which includes the business logic.
