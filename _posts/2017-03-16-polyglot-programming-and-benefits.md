@@ -19,7 +19,7 @@ In other applications where we required to re-engineer a monolithic application 
 
 GoLang is the language that i enjoy writing most because i came from a C language background and i loved performance and that Golang had concurrency as a first-class citizen.
 
-I had been dabbling with Haskell for a while but while i liked a language that is pure functional the lazy loading (have you even ran out of memory?) and having no-side effects is what i loved most but i couldn't apply it in production and it remains as a more hobby language for me and Haskell is good when you are learning functional language.
+I had been dabbling with Haskell for a while but while i liked a language that is pure functional the lazy evaluation (have you even ran out of memory?) and having no-side effects is what i loved most but i couldn't apply it in production and it remains as a more hobby language for me and Haskell is good when you are learning functional language.
 
 After 15 years as a systems and network engineer (yes, network as well) with not much software development knowledge but now, it makes me more flexible in taking development roles and make it possible to architecture the infrastructure at the lowest level.
 
