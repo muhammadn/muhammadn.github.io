@@ -5,7 +5,7 @@ comments: true
 
 {% for post in site.posts %}
   <div id="{{ post.date | date: "%F-%H" }}" class="unit whole align-left post">
-        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <article itemscope itemtype="https://schema.org/BlogPosting">
                 <h2>{{ post.title }}<br>
                 <small class="chip">{{ post.date | date: "%b %-d, %Y" }}</small>
                 </h2>
@@ -15,7 +15,7 @@ comments: true
                 </div>
 
                 {% if post.author %}
-                <span class="chip" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <span class="chip" itemprop="author" itemscope itemtype="https://schema.org/Person">
                         <span itemprop="name">Article by {{ post.author }}</span>
                 </span>
                 {% endif %}
