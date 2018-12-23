@@ -9,4 +9,4 @@ Supports Windows 7 (32 or 64 bit), Windows 8 and Windows 10.
 Download it from here:
 [Jawi Keyboard Phonetic Layout (QWERTY)]({{ site.url }}/assets/files/Jawi Keyboard Phonetic.zip)
 
-SHA256 SUM - 4d0661a958c8ac2371b8e9448cb1be91a8c0432a5384b89255593c7bd45a137f
+SHA256 SUM - 2208c70bf5833cedca4427a39086598d965fa990ed3eaf528b147ad6163c2ec4
