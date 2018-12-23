@@ -4,7 +4,7 @@ title:  "Phonetic Jawi Keyboard Layout for Windows"
 date:   2018-12-23 17:13:00 +0800
 ---
 
-Supports Windows 7 (32 or 64 bit) and above.
+Supports Windows 7 (32 or 64 bit), Windows 8 and Windows 10.
 
 Download it from here:
 [Jawi Keyboard Phonetic support]({{ site.url }}/assets/files/Jawi Keyboard Phonetic.zip)
