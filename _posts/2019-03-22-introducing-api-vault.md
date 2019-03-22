@@ -33,8 +33,9 @@ I call it "API Vault". So basically it does these things:
 
 1. User will authenticate to API Vault.
 2. API Vault returns a JWT Token.
-3. User accesses a microservice with their JWT Token.
+3. User accesses a microservice via API Vault with their JWT Token.
 4. API Vault "converts" the JWT Token to another Token for accessing the microservice endpoint
+5. User gets data from their microservice endpoint
 
 It is simple. 
 
