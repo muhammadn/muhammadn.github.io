@@ -47,6 +47,9 @@ So basically you need to authenticate to API Vault only *once* and access your s
 
 And here's another thing - your microservices can have different JWT Secrets and API Vault happily does the conversion for you.
 
+Another thing - no changes are needed for your current microservices to use API Vault. Just configure API Vault
+and API Vault will use the secrets from your microservices to generate it's token to the microservice.
+
 API Vault supports MySQL, PostgreSQL and Microsoft SQL.
 
 You can check out the Github Project [here](https://github.com/muhammadn/APIVault) (don't forget to star ⭐️ it!)
