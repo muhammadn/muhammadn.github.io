@@ -50,6 +50,10 @@ And here's another thing - your microservices can have different JWT Secrets and
 Another thing - no changes are needed for your current microservices to use API Vault. Just configure API Vault
 and API Vault will use the secrets from your microservices to generate it's token to the microservice.
 
+Your microservices can be in a private network without exposing it to a public network while APIVault is exposed to the public
+network.
+
+
 API Vault supports MySQL, PostgreSQL and Microsoft SQL.
 
 You can check out the Github Project [here](https://github.com/muhammadn/APIVault) (don't forget to star ⭐️ it!)
