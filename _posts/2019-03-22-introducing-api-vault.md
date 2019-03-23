@@ -53,6 +53,8 @@ and API Vault will use the secrets from your microservices to generate it's toke
 Your microservices can be in a private network while APIVault is only one exposed to the public for the user.
 network.
 
+Even if your microservices is exposed to public, the user who had authenticated with APIVault cannot use the token
+given by APIVault to access those microservices endpoints.
 
 API Vault supports MySQL, PostgreSQL and Microsoft SQL.
 
