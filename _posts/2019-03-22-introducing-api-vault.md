@@ -6,7 +6,7 @@ date:   2019-03-22 20:31:00 +0800
 
 I work mostly on APIs. Writing APIs on many languages and different ways of interacting with each other.
 
-Currently at my work i wrote APIs in Ruby, PHP and Go. This is my current toolstack but sometimes i might use
+Currently at my work i write APIs in Ruby, PHP and Go. This is my current toolstack but sometimes i might use
 Rust for background processing or Elixir when needed. Oh yeah, Python. My favourite tool for working with data.
 
 For my work, we have many microservices and each has their *own* authentication endpoints. Which is bad and JWT Tokens
