@@ -7,7 +7,6 @@
 +#ifdef HAVE_DECL_RL_EVENT_HOOK
 +  #ifdef __APPLE__
 +    static int rl_event_hook;
-+    static int rl_hook_func_t;
 +  #endif
 +#endif
 +
