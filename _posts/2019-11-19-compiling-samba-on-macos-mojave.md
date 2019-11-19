@@ -14,6 +14,8 @@ The most interesting find is even the latest macOS is using the rather old _edit
 
 These are the instruction for samba-4.11.2 on macOS Mojave:
 
+Note: Before you run commands below, make sure you have the latest Xcode installed on your macOS!
+
 1. Download samba-4.11.2 from [https://samba.org](https://samba.org)
 2. Download the patch file: [samba-4.11.2-readline.patch]({{ site.url }}/assets/files/samba-4.11.2-readline.patch)
 3. Uncompress the samba-4.11.2 source file
