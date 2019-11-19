@@ -1,0 +1,47 @@
+--- libcli/smbreadline/smbreadline.c	2019-07-09 18:08:41.000000000 +0800
++++ ../samba-4.11.2-patched/libcli/smbreadline/smbreadline.c	2019-11-19 19:05:26.000000000 +0800
+@@ -47,19 +47,30 @@
+ 
+ static bool smb_rl_done;
+ 
++#ifdef HAVE_DECL_RL_EVENT_HOOK
++  #ifdef __APPLE__
++    static int rl_event_hook;
++    static int rl_hook_func_t;
++  #endif
++#endif
++
+ #ifdef HAVE_LIBREADLINE
+ /*
+  * MacOS/X does not have rl_done in readline.h, but
+  * readline.so has it
+  */
+-extern int rl_done;
++ #ifndef __APPLE__
++   extern int rl_done;
++ #endif
+ #endif
+ 
+ void smb_readline_done(void)
+ {
+ 	smb_rl_done = true;
+ #ifdef HAVE_LIBREADLINE
++  #ifndef __APPLE__
+ 	rl_done = 1;
++  #endif
+ #endif
+ }
+ 
+@@ -147,7 +158,11 @@
+ 
+ #ifdef HAVE_DECL_RL_EVENT_HOOK
+ 	if (callback)
+-		rl_event_hook = (rl_hook_func_t *)callback;
++        #ifdef __APPLE__
++              rl_event_hook = (Function *)callback;
++        #else
++     		rl_event_hook = (rl_hook_func_t *)callback;
++        #endif
+ #endif
+ 	ret = readline(prompt);
+ 	if (ret && *ret)
