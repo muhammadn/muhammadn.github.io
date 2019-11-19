@@ -1,12 +1,15 @@
 --- libcli/smbreadline/smbreadline.c	2019-07-09 18:08:41.000000000 +0800
-+++ ../samba-4.11.2-patched/libcli/smbreadline/smbreadline.c	2019-11-19 19:05:26.000000000 +0800
-@@ -47,19 +47,30 @@
++++ ../samba-4.11.2-patched/libcli/smbreadline/smbreadline.c	2019-11-19 20:02:19.000000000 +0800
+@@ -47,19 +47,32 @@
  
  static bool smb_rl_done;
  
 +#ifdef HAVE_DECL_RL_EVENT_HOOK
 +  #ifdef __APPLE__
 +    static int rl_event_hook;
++  #else
++    static int rl_event_hook;
++    static int rl_hook_func_t;
 +  #endif
 +#endif
 +
@@ -31,7 +34,7 @@
  #endif
  }
  
-@@ -147,7 +158,11 @@
+@@ -147,7 +160,11 @@
  
  #ifdef HAVE_DECL_RL_EVENT_HOOK
  	if (callback)
