@@ -8,7 +8,7 @@ Latest versions of macOS does not include SAMBA but has their own tool called `s
 
 Even brew (yeah, the package manager) did not want to maintain SAMBA in the package tree because it is a hell to compile SAMBA on macOS.
 
-But because i wanted to message my wife on her computer (she works in a cybercafe) with Windows messaging popups so i decided to hack SAMBA source and make it compile and run on macOS.
+But because i wanted to message my wife on her computer in her office while being on her office's VPN with Windows messaging popups so i decided to hack SAMBA source and make it compile and run on macOS.
 
 The most interesting find is even the latest macOS is using the rather old _editline_ instead of the more common _GNU readline_, thanks to the information i got from this the blog [HERE](https://blueslugs.com/blog/2016-10-23-updating-cppfunction-in-old-readline-consumers/)
 
