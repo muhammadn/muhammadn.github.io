@@ -10,7 +10,7 @@ Back in April, My Celcom Life app was behaving strangely where when i reloaded m
 
 Well, the request for my data plan  *did not* go through - which it should. Then i realised that the server is validating against my local Celcom Life app Credits and not the verification of the credits were not done at the server.
 
-So i had suspected if the server relied on my phone's 'credit' information, there would be a possibility that anyone could tell the server "Hey!, i have RM100 credits, give me RM30 credits data plan for 1 month".
+So i had suspected if the server relied on my phone's 'credit' information, there could be a possibility that anyone could tell the server "Hey!, i have RM100 credits, give me RM30 credits data plan for 1 month".
 
 Out of curiousity, i ran my Android Emulator, setup a Man-in-the-Middle attack on the Celcom Life mobile App on the Emulator by making sure Celcom Life app trusts my "own Certificate"
 
