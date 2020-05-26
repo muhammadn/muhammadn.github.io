@@ -8,7 +8,7 @@ So it's more than a month and as a Celcom Customer i had seen a lot of updates o
 
 Back in April, My Celcom Life app was behaving strangely where when i reloaded my credit and tried to buy a data plan without refreshing my app.
 
-Well, the request for my data plan  *did not* go through. Then i realised that the server is validating against my local Celcom Life app Credits and not the verification of the credits were not done at the server.
+Well, the request for my data plan  *did not* go through - which it should. Then i realised that the server is validating against my local Celcom Life app Credits and not the verification of the credits were not done at the server.
 
 So i had suspected if the server relied on my phone's 'credit' information, there would be a possibility that anyone could tell the server "Hey!, i have RM100 credits, give me RM30 credits data plan for 1 month".
 
