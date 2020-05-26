@@ -22,7 +22,7 @@ The first step was the Celcom Life App OTP 2FA, when you request for the 2FA tok
 
 After getting logged in with the OTP and playing around with the Celcom Life App on my Android Emulator, i got to a point that i could see my own *phone sim's* subscribed plans, available plans and my data usage.
 
-Then i tried to change the parameters to query from my number (MSISDN number and that's what telco's call it) and use some random celcom number and got THEIR plan information as well, including the subscription plans, data usage and more.
+Then i tried to change the parameters to query information about another random phone number by changing the last few digits (MSISDN number and that's what telco's call it) and got THEIR plan information as well, including the subscription plans, data usage and more.
 
 ![Celcom API]({{ site.url }}/assets/images/Celcom Life API.png){:class="img-responsive"}
 
