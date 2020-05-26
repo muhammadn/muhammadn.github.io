@@ -37,5 +37,7 @@ Celcom Life App handles transactions for credits, data plans, roaming, billing a
 Incident Timeline:
 
 April 5 - Discovered Analytics and Subscriber data leaks
+
 April 5 - Alerted Celcom
+
 April 8 - Maintenance and Updates
