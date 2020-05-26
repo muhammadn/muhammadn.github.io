@@ -10,7 +10,7 @@ Back in April, My Celcom Life app was behaving strangely where when i reloaded m
 
 Well, the request for my data plan  *did not* go through. Then i realised that the server is validating against my local Celcom Life app Credits and not the verification of the credits were not done at the server.
 
-So i had suspected if the server relied on my phone's 'credit' information, there would be a possibility that anyone could tell the server "Hey!, i have RM100 credits, give me RM30 credits data plan for 1 momnth".
+So i had suspected if the server relied on my phone's 'credit' information, there would be a possibility that anyone could tell the server "Hey!, i have RM100 credits, give me RM30 credits data plan for 1 month".
 
 Out of curiousity, i ran my Android Emulator, setup a Man-in-the-Middle attack on the Celcom Life mobile App on the Emulator by making sure Celcom Life app trusts my "own Certificate"
 
@@ -33,3 +33,9 @@ This security vulnerability has been reported to Celcom on the 5th April 2020 an
 I did not get past checking if i can get free data plans but the exposure of customer's data was serious enough for me to forget about it (since i am a Celcom Customer). However, as much as a suspected that might be vulnerable i did not look into it further.
 
 Celcom Life App handles transactions for credits, data plans, roaming, billing and more for PREPAID AND POSTPAID customers so i feel it is really serious headache to know someone who is on the same network (celcom) could gain access to your personal subscriber information.
+
+Incident Timeline:
+
+April 5 - Discovered Analytics and Subscriber data leaks
+April 5 - Alerted Celcom
+April 8 - Maintenance and Updates
