@@ -6,9 +6,11 @@ date:   2020-12-08 14:16:00 +0800
 
 ![NetIdentity]({{ site.url }}/assets/images/netidentity-diagram.png){:class="img-responsive"}
 
-I started doing this when i found out that most API Providers are too costly or has high latency (hello ip2location!) and i needed this for Awesell and Awesell has now been integrated with NetIdentity. 
+I started doing this when i found out that most API Providers are too costly or has high latency (hello ip2location!) and i needed this for [Awesell](https://awesell.com) and [Awesell](https://awesell.com) has now been integrated with [netIdentity](https://netidentity.io). 
 
-So it actually to solve my own problem and looking at the potential NetIdentity would be for others, i decided to build it for low latency and high availibility.
+So it was actually designed to solve my own problem and looking at the potential NetIdentity would be for others, i decided to build it for low latency and high availibility.
+
+You can actually use it now on [Rakuten's RapidAPI](https://english.api.rakuten.net/netidentity-netidentity-default/api/netidentity1/endpoints)  (we have still to work on our [site](https://netidentity.ui))
 
 The actual interesting part here is the CDN Edges running my serverless code to generate the data and make a call to origin server ONLY when necessary.
 
