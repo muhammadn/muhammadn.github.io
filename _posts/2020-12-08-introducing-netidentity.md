@@ -10,7 +10,7 @@ I started doing this when i found out that most API Providers are too costly or 
 
 So it was actually designed to solve my own problem and looking at the potential NetIdentity would be for others, i decided to build it for low latency and high availibility.
 
-You can actually use it now on [Rakuten's RapidAPI](https://english.api.rakuten.net/netidentity-netidentity-default/api/netidentity1/endpoints)  (we have still to work on our [site](https://netidentity.ui))
+You can actually use it now on [Rakuten's RapidAPI](https://english.api.rakuten.net/netidentity-netidentity-default/api/netidentity1/endpoints)  (we have still to work on our [site](https://netidentity.io))
 
 The actual interesting part here is the CDN Edges running my serverless code to generate the data and make a call to origin server ONLY when necessary.
 
