@@ -6,7 +6,7 @@ date:   2020-12-08 14:16:00 +0800
 
 ![NetIdentity]({{ site.url }}/assets/images/netidentity-diagram.png){:class="img-responsive"}
 
-I started doing this when i found out that most API Providers are too costly or has high latency (hello ip2location!) and i needed this for [Awesell](https://awesell.com) and [Awesell](https://awesell.com) has now been integrated with [netIdentity](https://netidentity.io). 
+I started doing this when i found out that most API Providers are too costly or has high latency (hello ip2location!) and i needed this for [Awesell](https://awesell.com) and [Awesell](https://awesell.com) has now been integrated with [NetIdentity](https://netidentity.io). 
 
 So it was actually designed to solve my own problem and looking at the potential NetIdentity would be for others, i decided to build it for low latency and high availibility.
 
