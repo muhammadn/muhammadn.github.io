@@ -18,7 +18,9 @@ so 2 scripts, my machine was running 50 threads concurrently.
 
 ![Python DoS]({{ site.url }}/assets/images/python dos.png){:class="img-responsive"}
 
-But i ran two scripts, one with small payloads (to increase autoincrement faster) and a bigger payload (about 1.5MB per database row)
+For the two scripts, one with small payloads (to increase autoincrement faster) and a bigger payload (about 1.5MB per database row)
+
+The reason why i chose to attack using two different payloads is to use up the adversary's resources a lot faster (table size limit or table id limit, or the database connection has been used up)
 
 After running it for about half-and-hour, the perpretor finally took it's website down.
 
@@ -28,7 +30,7 @@ Most of the phishing sites are really simple forms and you can check the request
 
 So here is the script (do not abuse it but you can read it for educational purposes)
 
-fills the database with large random data
+fills the database with large random data at 500kb per column
 ```
 import logging
 import threading
@@ -67,5 +69,3 @@ if __name__ == "__main__":
         thread.join()
         logging.info("Main    : thread %d done", index)
 ```
-
-Do note that you can modify this to use smaller data to increase the autoincrement ID of the database a lot faster (so there will be errors on the database if it reaches 4 billion rows - if the adversary depending if it is unsigned INT - which is common)
