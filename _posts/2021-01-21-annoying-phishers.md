@@ -10,7 +10,7 @@ So a few hours ago a friend alerted me on facebook about a phishing site hosted 
 
 And this guy was collecting username and passwords of a large bank in Malaysia (I am in Malaysia).
 
-Ran a couple of SQL Injection scripts but at the same time i ran a DoS script that is powerful that was utilizing his resources and might send an alert to the provider on the activity on their network.
+Ran a couple of SQL Injection scripts but at the same time i wrote a DoS script that is powerful that was utilizing the perpretor's resources and might send an alert to the provider on the activity on their network.
 
 After working on the third version of the python script which was heavily threaded, i had also made a similar version that sends a large data that will be stored in his database. (the limit of a table size in MySQL is 65536 bytes) but i was hitting his server at 50Mbit/s running 25 python threads at one short.
 
