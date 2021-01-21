@@ -28,6 +28,8 @@ After running it for about half-and-hour, the perpretor finally took it's websit
 
 Most of the phishing sites are really simple forms and you can check the requests to launch and attack on them.
 
+The only purpose of such phishing sites are just to collect data and we can use that as the weakness to overload their systems, whether their web code (number of connections that it can use to connect to database) or the database itself (max table size, incremental ids)
+
 So here is the script (do not abuse it but you can read it for educational purposes)
 
 fills the database with large random data at 500kb per column
