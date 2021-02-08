@@ -8,7 +8,7 @@ The scammer(phisher) had shutdown onlinemaycampaign.com and hosted it on another
 
 I had only reacted by attacking the phisher again after a victim lost thousands of ringgits after the phisher got his SMS TAC and bought game credits, after that i got in touch with the victim to get in contact with the investigation officer.
 
-This scammer was persistent in his (or her) criminal activity and i had to change my strategy and i managed to extract data from campaignmay2u.com, saved as CSV and JSON (complete with victim's IP and time the victim submitted in Turkish timezone and a lot more) of the data.
+This scammer was persistent in his (or her) criminal activity and i had to change my strategy and i managed to find the flaws from campaignmay2u.com, got the data which is saved as CSV and JSON of all the critical evidence.
 
 All these data was submitted to the authorities as evidence.
 
