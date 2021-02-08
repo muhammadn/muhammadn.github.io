@@ -14,4 +14,4 @@ All these data was submitted to the authorities as evidence.
 
 Although campaignmay2u.com is now pointing to another IP address, i can still access the criminal's phishing site by altering and pointing the correct IP to that domain in my computer's hosts file.
 
-So i am waiting for the authorities to tell me to purge the sensitive data as the i might need those provide information to the authorities, if the authorities felt were incomplete.
+So i am waiting for the authorities to tell me to purge the sensitive data as the i might need to provide information to the authorities, if the authorities felt data is incomplete. I have sent them all i know including my code that monitors the activity on the phisher's website.
