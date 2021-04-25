@@ -8,7 +8,7 @@ Part of my work as a Site Reliablity Engineer at [Setel](https://setel.my) is to
 
 One of it is to collect traces of the performance of the services and we use Jaeger as we move away from SaaS services that deemed expensive.
 
-Jaeger was first developed by Uber and then opensourced and we had decided to use Jaeger since it allows us for distributed tracing across our Kubernetes Cluster and also it is supported by the Linux Foundatio n and is part of [CNCF (Cloud Native Computing Foundation)](https://www.cncf.io)
+Jaeger was first developed by Uber and then opensourced and we had decided to use Jaeger since it allows us for distributed tracing across our Kubernetes Cluster and also it is supported by the Linux Foundation and is part of [CNCF (Cloud Native Computing Foundation)](https://www.cncf.io)
 
 Despite that we realised that Jaeger has a dependency on ElasticSearch or Cassandra but going that route would be costly - not just as the cost of hosting these databases but also the operational costs that come with maintaining such services.
 
