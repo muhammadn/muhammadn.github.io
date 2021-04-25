@@ -18,7 +18,7 @@ Since Jaeger supports "plugins" using Hashicorp's `go-plugin`, i and my team dec
 
 This allows us to keep our operational costs as low as possible and S3 object storage is really cheap for storing data for retention.
  
-Under the hood, we leveraged on bolt-db shipper from loki's source code which stores the data (in boltdb format) in any object storage services (s3, gcs, azure blob storage) by also leveraging on cortex which is used by loki.
+Under the hood, we leveraged on [bolt-db shipper](https://grafana.com/docs/loki/latest/operations/storage/boltdb-shipper) from loki's source code which stores the data (in boltdb format) in any object storage services (s3, gcs, azure blob storage) by also leveraging on cortex which is used by loki.
 
 It's ready for production and we're shipping version 1.0 soon. So do check it out and test it out. (We've only tried using S3 which works but yet to try on GCS or Amazon Azure Storage).
 
