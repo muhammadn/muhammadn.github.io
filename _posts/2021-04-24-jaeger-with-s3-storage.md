@@ -22,4 +22,4 @@ Under the hood, we leveraged on bolt-db shipper from loki's source code which st
 
 It's ready for production and we're shipping version 1.0 soon. So do check it out and test it out. (We've only tried using S3 which works but yet to try on GCS or Amazon Azure Storage).
 
-You can also try configuring it using Amazon Dynamo or Google Bigtable (to store the indexes) which should theoratically work as we use Cortex to interface with the data storage backend.
+You can also try configuring it using Amazon Dynamo or Google Bigtable (to store the indexes) which should theoretically work as we use Cortex to interface with the data storage backend.
