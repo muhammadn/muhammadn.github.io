@@ -8,13 +8,13 @@ Part of my work as a Site Reliablity Engineer at Setel is to collect information
 
 One of it is to collect traces of the performance of the services and we use Jaeger as we move away from SaaS services that deemed expensive.
 
-Jaeger was first developed by Uber and then opensourced and we had decided to use Jaeger since it allows us for distributed tracing across our Kubernetes Cluster and also it is supported by the Linux Foundation.
+Jaeger was first developed by Uber and then opensourced and we had decided to use Jaeger since it allows us for distributed tracing across our Kubernetes Cluster and also it is supported by the Linux Foundatio n and is part of [CNCF (Cloud Native Computing Foundation)](https://www.cncf.io)
 
 Despite that we realised that Jaeger has a dependency on ElasticSearch or Cassandra but going that route would be costly - not just as the cost of hosting these databases but also the operational costs that come with maintaining such services.
 
 We have also looked at other options like running [Tempo](https://grafana.com/oss/tempo) that supports storing data on S3 but Tempo only allows searching only by TraceID and it requires additional infrastructure (Loki, Tempo) and we would like to go light on resources.
 
-Since Jaeger supports "plugins" using Hashicorp's `go-plugin`, i and my team decided that i worked on to develop the plugin for S3 storage. It's available [here](https://github.com/muhammadn/jaeger-s3).
+Since Jaeger supports "plugins" using Hashicorp's [go-plugin](https://github.com/hashicorp/go-plugin), i and my team decided that i worked on to develop the plugin for S3 storage. It's available [here](https://github.com/muhammadn/jaeger-s3).
 
 This allows us to keep our operational costs as low as possible and S3 object storage is really cheap for storing data for retention.
  
