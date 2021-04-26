@@ -4,7 +4,7 @@ title:  "Jaeger with S3 storage backend"
 date:   2021-04-25 14:03:00 +0800
 ---
 
-Part of my work as a Site Reliablity Engineer at [Setel](https://setel.my) is to collect information on the performance metrics of the services that i and my team manage.
+Part of my work as a Site Reliablity Engineer at my work, my job is to collect information on the performance metrics of the services that i and my team manage.
 
 One of it is to collect traces of the performance of the services and we use Jaeger as we move away from SaaS services that deemed expensive.
 
