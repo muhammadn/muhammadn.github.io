@@ -10,6 +10,6 @@ I had looked in Tempo/Loki but going this path would make me have more infrastru
 
 Eversince Jaeger-S3 was released, i had been speeding up with optimizations and even loki data format compatibility (will be a breaking change in Jaeger-S3 v2 but this will take some time) if you guys want to actually use loki to read Jaeger-S3 generated data. But you don't need to upgrade if it available to stay on v1 if loki is not really important.
 
-With Jaeger-S3, you don't need loki or tempo and grafana is optional when Jaeger-UI having HTTP "basic-auth" is not really an option.
+With Jaeger-S3, you don't need loki or tempo and grafana is optional when Jaeger-UI having HTTP "basic-auth" is not really an option and you would like to leverage on Grafana authentication/SSO.
 
 Personally i had been using Grafana with Jaeger (and Jaeger-S3) and i just need to focus on Grafana to check the traces. Again, No tempo, no loki. Only Jaeger and Grafana.
