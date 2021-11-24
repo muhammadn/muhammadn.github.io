@@ -36,7 +36,7 @@ SecRule REQUEST_METHOD "POST" "chain"
 SecRule REMOTE_ADDR "@ipMatchFromFile /etc/nginx/blacklisted_ips.txt" "setvar:IP.spam=1,expirevar:IP.spam=604800"
 ```
 
-The last part with blacklisted IPs which a file where you can declare the IP blocks if you need to. example:
+The last part with blacklisted IPs (in blacklisted_ips.txt) which a file where you can declare the IP blocks if you need to. example:
 
 ```
 123.123.12.0/24
