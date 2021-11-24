@@ -19,7 +19,7 @@ SecRule REQUEST_METHOD "POST" "chain"
 SecRule REQUEST_URI "/your/website/post/comment/path"
 
 # spamhaus
-SecRule REQUEST_URI "/t/tutor/create" "id:400010,chain,deny,log,status:403,msg:'Spam host %{REQUEST_HEADERS:X-Forwarded-For} detected by sbl-xbl.spamhaus.org'"
+SecRule REQUEST_URI "/your/website/post/comment/path" "id:400010,chain,deny,log,status:403,msg:'Spam host %{REQUEST_HEADERS:X-Forwarded-For} detected by sbl-xbl.spamhaus.org'"
 SecRule REQUEST_METHOD "POST" "chain"
 SecRule REMOTE_ADDR "@rbl sbl-xbl.spamhaus.org" "setvar:IP.spam=1,expirevar:IP.spam=604800"
 
