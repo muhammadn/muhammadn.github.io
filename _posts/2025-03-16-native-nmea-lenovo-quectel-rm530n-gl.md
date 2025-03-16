@@ -14,6 +14,8 @@ It works right out of the box with 5G connectivity, however, there is no NMEA su
 
 So i decided to hack the Linux to get the NMEA GPS data out from the 5G modem.
 
+After apply the patch and recompiling the kernel, you should have `/dev/wwan0mea0` device and you can use minicom to see the data and configure `gpsd` to read the data and you can read it from gpsd with `cgps` tool.
+
 It's not really that of a huge change but here's the patch:
 
 ```
