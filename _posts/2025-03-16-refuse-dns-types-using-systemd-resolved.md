@@ -8,7 +8,7 @@ For DNS at our current implementation of resolvers, the DNS resolvers will try t
 
 We had tried to use `no-aaaa` but this is just a glibc *hack* that the glibc maintainers use to test applications and not for **production**
 
-So i took the [initiative](https://github.com/systemd/systemd/pull/34165) to actually implement a feature to refuse `AAAA` IPv6 DNS queries outright from systemd-resolved. This feature will be shipped with systemd-257.
+So i took the [initiative](https://github.com/systemd/systemd/pull/34165) to actually implement a feature to refuse `AAAA` IPv6 DNS queries outright from systemd-resolved. This feature will be shipped with systemd-v258.
 
 After much discussion with the maintainers of systemd-resolved and particularly Leonart Poettering who suggested having an option to also refuse other types of queries, which *can* be `A` or `SRV` or `TXT`.
 
