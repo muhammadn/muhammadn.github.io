@@ -4,10 +4,6 @@ title:  "Enabling getting native NMEA GPS data for Lenovo's Quectel RM520N-GL"
 date:   2025-03-16 13:10 +0800
 ---
 
-I think i need to be in a hurry to write this down, eventhough it's the weekend but there's so much to write about. i
-
-Many things have had happened for the past few years so i will try to document so to help others who have having this issue.
-
 This is about a new laptop that i got, which is a customise Lenovo Carbon X1 Gen12 which includes a RM520N-GL 5G (sub-6Ghz) module by Quectel (but the device is specific to only Lenovo's version of RM520N-GL with a different device id)
 
 Also Lenovo's Quectel RM512N-GL uses PCIe interface compared to the module you get directly from Quectel which uses the USB interface, so different drivers, heh.
