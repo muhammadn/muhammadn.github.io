@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "What is MPTCP and implementations for Traefik and Chrome on Linux"
-date:   2025-03-16 02:07 +0800
+date:   2025-03-16 14:07 +0800
 ---
 As being the usual me, i would triage the Linux kernel CHANGELOG for any updates with regards to my Lenovo ThinkPad Carbon X1 hardware.
 
