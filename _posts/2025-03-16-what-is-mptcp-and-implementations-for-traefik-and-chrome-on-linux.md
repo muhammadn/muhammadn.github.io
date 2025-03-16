@@ -21,7 +21,7 @@ The caveat is that the server must also support MPTCP.
 
 I've contributed a small change for [traefik reverse proxy](https://github.com/traefik/traefik/pull/11601) for server.
 
-Also added native MPTCP client support for [Chrome on Linux](https://chromium-review.googlesource.com/c/chromium/src/+/6355767) so you won't need an `mptcpize` LD_PRELOAD "shim" to force-enable MPTCP to official Chrome version.
+Also added native MPTCP client support for [Chrome on Linux](https://chromium-review.googlesource.com/c/chromium/src/+/6355767) so you won't need an `mptcpize` LD_PRELOAD *shim* to force-enable MPTCP to official Chrome version.
 
 First time working on C++ codebase but it's quite easy as i had worked on C, so it's pretty natural.
 
