@@ -1,0 +1,19 @@
+diff -r pcie_mhi/controllers/mhi_qti.c linux-6.12.6/drivers/pcie_mhi/controllers/mhi_qti.c
+1073a1074
+> 	{PCI_DEVICE(0x1eac, 0x1007)}, //RM520N-GL (Lenovo)
+diff -r pcie_mhi/core/mhi_init.c linux-6.12.6/drivers/pcie_mhi/core/mhi_init.c
+647c647
+< 	.llseek =	no_llseek,
+---
+> 	.llseek =	NULL,
+2372c2372
+< static int mhi_match(struct device *dev, struct device_driver *drv)
+---
+> static int mhi_match(struct device *dev, const struct device_driver *drv)
+diff -r pcie_mhi/devices/mhi_netdev_quectel.c linux-6.12.6/drivers/pcie_mhi/devices/mhi_netdev_quectel.c
+2593,2594c2593,2594
+< 	strlcpy (info->driver, "pcie_mhi", sizeof info->driver);
+< 	strlcpy (info->version, PCIE_MHI_DRIVER_VERSION, sizeof info->version);
+---
+> 	strncpy (info->driver, "pcie_mhi", sizeof info->driver);
+> 	strncpy (info->version, PCIE_MHI_DRIVER_VERSION, sizeof info->version);
