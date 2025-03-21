@@ -6,7 +6,7 @@ date:   2025-03-16 13:10 +0800
 
 This is about a new laptop that i got, which is a customise Lenovo Carbon X1 Gen12 which includes a RM520N-GL 5G (sub-6Ghz) module by Quectel (but the device is specific to only Lenovo's version of RM520N-GL with a different device id)
 
-Also Lenovo's Quectel RM512N-GL uses PCIe interface compared to the module you get directly from Quectel which uses the USB interface, so different drivers, heh.
+Also Lenovo's Quectel RM520N-GL uses PCIe interface compared to the module you get directly from Quectel which uses the USB interface, so different drivers, heh.
 
 Anyway, i will talk about the native Linux support with ModemManager (for Quectel's official client, that would be another post, folks!) - with PopOS! (22.04)
 
@@ -68,4 +68,4 @@ index a4d6cc0c9f68..ca38a2fe0987 100644
 
 ```
 
-or download the patch file from [here]({{ site.url }}/assets/files/quectel-lenovo-rm512n-gl.patch).
+or download the patch file from [here]({{ site.url }}/assets/files/quectel-lenovo-rm520n-gl.patch).
