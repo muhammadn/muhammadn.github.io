@@ -23,6 +23,8 @@ I've contributed a small change for [traefik reverse proxy](https://github.com/t
 
 Also added native MPTCP client support for [Chrome on Linux](https://chromium-review.googlesource.com/c/chromium/src/+/6355767) so you won't need an `mptcpize` LD_PRELOAD *shim* to force-enable MPTCP to official Chrome version.
 
+![MPTCP working in Chrom(ium)]({{ site.url }}/assets/images/mptcp.jpg){:class="img-responsive"}
+
 First time working on C++ codebase but it's quite easy as i had worked on C, so it's pretty natural.
 
 Let's see how it goes, surely it will be a win-win for getting a reliable connection and having a speed bump when using Chrome on Linux.
